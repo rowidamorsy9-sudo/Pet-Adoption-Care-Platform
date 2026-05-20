@@ -21,6 +21,16 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
 
+// Layout wrapper that includes the Navbar
+function MainLayout({ children }) {
+  return (
+    <>
+      <Navbar />
+      {children}
+    </>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter>
@@ -31,35 +41,25 @@ function App() {
         <Route path="/admin/users"        element={<ProtectedRoute requiredRole="admin"><AdminDashboard /></ProtectedRoute>} />
         <Route path="/admin/messages"     element={<ProtectedRoute requiredRole="admin"><AdminDashboard /></ProtectedRoute>} />
 
-        {/* ── All other pages share the Navbar ── */}
-        <Route
-          path="/*"
-          element={
-            <>
-              <Navbar />
-              <Routes>
-                <Route path="/"                        element={<Pets />} />
-                <Route path="/pets"                    element={<Pets />} />
-                <Route path="/pets/:id"                element={<PetDetails />} />
-                <Route path="/cart"                    element={<Cart />} />
-                <Route path="/wishlist"                element={<Wishlist />} />
-                <Route path="/login"                   element={<Login />} />
-                <Route path="/register"                element={<Register />} />
-                <Route path="/about"                   element={<About />} />
-                <Route path="/contact"                 element={<Contact />} />
-                <Route path="/adoption-tips"           element={<AdoptionTips />} />
-                <Route path="/apply-adoption/:petId"   element={<ApplyAdoption />} />
-                <Route path="/my-applications"         element={<MyApplications />} />
-                <Route path="/profile"                 element={<Profile />} />
+        {/* ── Admin pet-management pages (with Navbar) ── */}
+        <Route path="/admin/my-pets"      element={<ProtectedRoute requiredRole="admin"><MainLayout><MyPets /></MainLayout></ProtectedRoute>} />
+        <Route path="/admin/add-pet"      element={<ProtectedRoute requiredRole="admin"><MainLayout><AddPet /></MainLayout></ProtectedRoute>} />
+        <Route path="/admin/edit-pet/:id" element={<ProtectedRoute requiredRole="admin"><MainLayout><EditPet /></MainLayout></ProtectedRoute>} />
 
-                {/* ── Admin pet-management pages (with Navbar) ── */}
-                <Route path="/admin/my-pets"      element={<ProtectedRoute requiredRole="admin"><MyPets /></ProtectedRoute>} />
-                <Route path="/admin/add-pet"      element={<ProtectedRoute requiredRole="admin"><AddPet /></ProtectedRoute>} />
-                <Route path="/admin/edit-pet/:id" element={<ProtectedRoute requiredRole="admin"><EditPet /></ProtectedRoute>} />
-              </Routes>
-            </>
-          }
-        />
+        {/* ── All other pages with Navbar ── */}
+        <Route path="/"                      element={<MainLayout><Pets /></MainLayout>} />
+        <Route path="/pets"                  element={<MainLayout><Pets /></MainLayout>} />
+        <Route path="/pets/:id"              element={<MainLayout><PetDetails /></MainLayout>} />
+        <Route path="/cart"                  element={<MainLayout><Cart /></MainLayout>} />
+        <Route path="/wishlist"              element={<MainLayout><Wishlist /></MainLayout>} />
+        <Route path="/login"                 element={<MainLayout><Login /></MainLayout>} />
+        <Route path="/register"              element={<MainLayout><Register /></MainLayout>} />
+        <Route path="/about"                 element={<MainLayout><About /></MainLayout>} />
+        <Route path="/contact"              element={<MainLayout><Contact /></MainLayout>} />
+        <Route path="/adoption-tips"         element={<MainLayout><AdoptionTips /></MainLayout>} />
+        <Route path="/apply-adoption/:petId" element={<MainLayout><ApplyAdoption /></MainLayout>} />
+        <Route path="/my-applications"       element={<MainLayout><MyApplications /></MainLayout>} />
+        <Route path="/profile"               element={<MainLayout><Profile /></MainLayout>} />
       </Routes>
     </BrowserRouter>
   );
