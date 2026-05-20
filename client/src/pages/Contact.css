@@ -1,0 +1,438 @@
+.contact-page {
+    min-height: 100vh;
+    background: #fff7f4;
+    font-family: Arial, sans-serif;
+    padding-bottom: 80px;
+}
+
+/* ── Hero ── */
+.contact-hero {
+    text-align: center;
+    padding: 70px 90px 50px;
+    background: linear-gradient(155deg, #fff7f4 55%, #ffe0eb 100%);
+}
+
+.contact-eyebrow {
+    display: inline-block;
+    background: #fce4ed;
+    color: #f48aaa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.contact-hero h1 {
+    font-size: 46px;
+    color: #5d4a52;
+    font-weight: 800;
+    margin: 0 0 14px;
+}
+
+.contact-hero p {
+    color: #9b7f8d;
+    font-size: 18px;
+}
+
+/* ── Info cards ── */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    padding: 0 90px;
+    margin-bottom: 48px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 22px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(244, 138, 170, 0.12);
+    transition: transform 0.2s;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+}
+
+.info-card span {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.info-card h3 {
+    font-size: 18px;
+    color: #5d4a52;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.info-card p {
+    color: #9b7f8d;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ── Main two-column ── */
+.contact-main {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    padding: 0 90px;
+    align-items: start;
+}
+
+/* ── Form ── */
+.contact-form-wrap {
+    background: white;
+    border-radius: 26px;
+    padding: 42px;
+    box-shadow: 0 6px 24px rgba(244, 138, 170, 0.14);
+}
+
+.contact-form-wrap h2,
+.contact-faq h2 {
+    font-size: 26px;
+    color: #5d4a52;
+    font-weight: 800;
+    margin-bottom: 28px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #7d6571;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 13px 16px;
+    border: 2px solid #fce4ed;
+    border-radius: 14px;
+    font-size: 15px;
+    color: #5d4a52;
+    background: #fff7f4;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #f48aaa;
+    box-shadow: 0 0 0 3px rgba(244, 138, 170, 0.15);
+    background: white;
+}
+
+.send-btn {
+    background: #f48aaa;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    align-self: flex-start;
+}
+
+.send-btn:hover {
+    background: #eb6f98;
+    transform: translateY(-2px);
+}
+
+/* ── Success ── */
+.success-msg {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.success-msg span {
+    font-size: 56px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.success-msg h3 {
+    font-size: 26px;
+    color: #5d4a52;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.success-msg p {
+    color: #9b7f8d;
+    font-size: 15px;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.success-msg button {
+    background: #fce4ed;
+    color: #f48aaa;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.success-msg button:hover {
+    background: #f9cfe1;
+}
+
+/* ── FAQ ── */
+.contact-faq {
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(244, 138, 170, 0.1);
+    transition: box-shadow 0.2s;
+    border: 2px solid transparent;
+}
+
+.faq-item:hover {
+    box-shadow: 0 6px 20px rgba(244, 138, 170, 0.18);
+}
+
+.faq-item.open {
+    border-color: #f48aaa;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.faq-question span:first-child {
+    font-size: 15px;
+    color: #5d4a52;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.faq-toggle {
+    font-size: 22px;
+    color: #f48aaa;
+    font-weight: 700;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.faq-answer {
+    margin-top: 14px;
+    color: #9b7f8d;
+    font-size: 14px;
+    line-height: 1.65;
+    padding-top: 14px;
+    border-top: 1px solid #fce4ed;
+}
+/* ── Error banner ─────────────────────────────────────────────────────────── */
+.contact-error {
+    background: #fff0ee;
+    border: 1px solid #ffc5b8;
+    color: #c0392b;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+/* ── Tab switcher ─────────────────────────────────────────────────────────── */
+.contact-tabs {
+    display: flex;
+    gap: 12px;
+    padding: 0 90px 28px;
+}
+
+.contact-tab-btn {
+    padding: 11px 24px;
+    border-radius: 30px;
+    border: 2px solid #fce4ed;
+    background: #fff;
+    color: #9b7f8d;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.contact-tab-btn:hover { border-color: #f48aaa; color: #f48aaa; }
+.contact-tab-btn.active { background: #f48aaa; color: #fff; border-color: #f48aaa; }
+
+/* ── My Messages section ─────────────────────────────────────────────────── */
+.my-messages-section {
+    padding: 0 90px;
+}
+
+.my-messages-section h2 {
+    font-size: 26px;
+    color: #5d4a52;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.msgs-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    color: #9b7f8d;
+}
+
+.msgs-spinner {
+    width: 32px; height: 32px;
+    border: 3px solid #fce4ed;
+    border-top-color: #f48aaa;
+    border-radius: 50%;
+    animation: msgspin 0.8s linear infinite;
+    margin-bottom: 12px;
+}
+@keyframes msgspin { to { transform: rotate(360deg); } }
+
+.msgs-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: #9b7f8d;
+    font-size: 1rem;
+}
+.msgs-empty span { font-size: 3rem; display: block; margin-bottom: 12px; }
+
+/* ── Individual message card ─────────────────────────────────────────────── */
+.msgs-list { display: flex; flex-direction: column; gap: 18px; }
+
+.msg-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 18px rgba(244, 138, 170, 0.1);
+    overflow: hidden;
+    border-left: 4px solid #fce4ed;
+}
+
+.msg-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px 14px;
+    border-bottom: 1px solid #fff0f5;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.msg-subject {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #5d4a52;
+    display: block;
+    text-transform: capitalize;
+}
+
+.msg-date {
+    font-size: 0.8rem;
+    color: #bba0ad;
+    display: block;
+    margin-top: 2px;
+}
+
+.msg-status-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.badge-replied { background: #dcfce7; color: #166534; }
+.badge-unread  { background: #fef3c7; color: #92400e; }
+
+.msg-body { padding: 18px 24px 20px; }
+
+.msg-original {
+    font-size: 0.9rem;
+    color: #7d6571;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.msg-reply-box {
+    background: #fff7f4;
+    border: 1.5px solid #fce4ed;
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+
+.msg-reply-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #f48aaa;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.msg-reply-text {
+    font-size: 0.92rem;
+    color: #5d4a52;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.msg-reply-date {
+    font-size: 0.78rem;
+    color: #bba0ad;
+}
+
+.msg-waiting {
+    background: #fef9e7;
+    border: 1.5px solid #fce4c0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    color: #92400e;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .contact-tabs       { padding: 0 16px 20px; }
+    .my-messages-section { padding: 0 16px; }
+}

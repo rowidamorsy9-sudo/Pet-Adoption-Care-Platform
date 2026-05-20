@@ -1,0 +1,91 @@
+.app-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border-left: 4px solid #e0e0e0;
+    transition: box-shadow 0.2s;
+}
+.app-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.09); }
+
+.status-pending-border  { border-left-color: #f59e0b; }
+.status-approved-border { border-left-color: #22c55e; }
+.status-rejected-border { border-left-color: #ef4444; }
+
+.app-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px 12px;
+    border-bottom: 1px solid #f3f4f6;
+}
+.app-pet-name { font-size: 1rem; font-weight: 700; color: #1a1d2e; margin: 0; }
+
+.app-status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.status-pending  { background: #fef3c7; color: #92400e; }
+.status-approved { background: #dcfce7; color: #166534; }
+.status-rejected { background: #fee2e2; color: #991b1b; }
+
+.app-card-body {
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.app-detail-row { display: flex; gap: 8px; font-size: 0.88rem; }
+.app-detail-label {
+    flex-shrink: 0;
+    width: 80px;
+    color: #9ca3af;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-top: 2px;
+}
+.app-detail-value { color: #374151; line-height: 1.5; }
+.app-reason-text  { color: #555; font-style: italic; }
+
+.app-card-actions {
+    display: flex;
+    gap: 10px;
+    padding: 14px 20px;
+    border-top: 1px solid #f3f4f6;
+    background: #fafafa;
+}
+.app-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: background 0.15s;
+    min-width: 100px;
+}
+.app-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.app-btn-approve { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+.app-btn-approve:hover:not(:disabled) { background: #bbf7d0; }
+
+.app-btn-reject  { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+.app-btn-reject:hover:not(:disabled)  { background: #fecaca; }
+
+.app-btn-spinner {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: app-spin 0.7s linear infinite;
+}
+@keyframes app-spin { to { transform: rotate(360deg); } }

@@ -1,0 +1,217 @@
+.apply-adoption-page {
+    min-height: 100vh;
+    background: #fff7f4;
+    padding: 40px 60px;
+    font-family: Arial, sans-serif;
+}
+
+.apply-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.apply-form-panel,
+.selected-pet-panel {
+    background: white;
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(255, 182, 193, 0.25);
+}
+
+.apply-form-panel h1 {
+    font-size: 42px;
+    color: #5d4a52;
+    margin-bottom: 8px;
+}
+
+.apply-subtitle {
+    color: #7d6571;
+    font-size: 18px;
+    margin-bottom: 26px;
+}
+
+.apply-message {
+    color: #f48aaa;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.apply-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.apply-form-group label {
+    color: #5d4a52;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.apply-form-group input,
+.apply-form-group textarea {
+    border: 1px solid #f3c2d0;
+    border-radius: 18px;
+    padding: 14px 16px;
+    outline: none;
+    color: #5d4a52;
+    font-size: 16px;
+    background: #fffdfc;
+}
+
+.apply-form-group input:focus,
+.apply-form-group textarea:focus {
+    border-color: #f48aaa;
+}
+
+.apply-form-group textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.apply-submit-btn {
+    width: 220px;
+    height: 52px;
+    background: #f48aaa;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.apply-submit-btn:hover {
+    background: #ef6f98;
+}
+
+.apply-submit-btn:disabled {
+    background: #d7a7b6;
+    cursor: not-allowed;
+}
+
+/* Pet side panel */
+
+.pet-loading-box {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7d6571;
+    font-size: 18px;
+    text-align: center;
+}
+
+.selected-pet-card {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.selected-pet-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
+.selected-pet-info h2 {
+    font-size: 34px;
+    color: #5d4a52;
+    margin-bottom: 6px;
+}
+
+.apply-pet-breed {
+    color: #f48aaa;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.apply-pet-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.apply-pet-tags span {
+    background: #f48aaa;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.apply-pet-info-list {
+    background: #fff7f4;
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.apply-pet-info-list p {
+    color: #7d6571;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.apply-pet-info-list strong {
+    color: #5d4a52;
+}
+
+.apply-pet-description-box {
+    background: #fff7f4;
+    border-radius: 20px;
+    padding: 18px;
+}
+
+.apply-pet-description-box h3 {
+    color: #5d4a52;
+    margin-bottom: 10px;
+}
+
+.apply-pet-description-box p {
+    color: #7d6571;
+    line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+    .apply-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .apply-adoption-page {
+        padding: 25px 16px;
+    }
+
+    .apply-form-panel,
+    .selected-pet-panel {
+        padding: 22px;
+    }
+
+    .apply-form-panel h1 {
+        font-size: 34px;
+    }
+
+    .selected-pet-image {
+        height: 220px;
+    }
+
+    .apply-submit-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,176 @@
+.pet-form-page {
+    min-height: 100vh;
+    background: #f5f6fa;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px 60px;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.pet-form-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 780px;
+    overflow: hidden;
+}
+
+.pf-header {
+    background: linear-gradient(135deg, #1a1d2e 0%, #2d3250 100%);
+    padding: 32px 40px 28px;
+    color: #fff;
+}
+
+.pf-back-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-bottom: 14px;
+    transition: background 0.15s;
+}
+.pf-back-btn:hover { background: rgba(255,255,255,0.18); }
+
+.pf-header h1 { margin: 0 0 6px; font-size: 1.55rem; font-weight: 700; }
+.pf-subtitle   { margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+
+.pf-alert {
+    margin: 20px 40px 0;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+.pf-alert-error   { background: #fff0ee; border: 1px solid #ffc5b8; color: #c0392b; }
+.pf-alert-success { background: #edfaf1; border: 1px solid #b2dfca; color: #1e7e4a; }
+
+.pf-error { color: #c0392b; padding: 32px 40px; font-size: 1rem; }
+
+.pf-form { padding: 28px 40px 36px; }
+
+.pf-section {
+    border: 1.5px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 24px;
+}
+.pf-section legend {
+    padding: 0 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ff784b;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.pf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.pf-field { display: flex; flex-direction: column; gap: 6px; }
+.pf-full  { grid-column: 1 / -1; }
+
+.pf-field label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.pf-field input,
+.pf-field select,
+.pf-field textarea {
+    border: 1.5px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-size: 0.92rem;
+    color: #1a1d2e;
+    background: #fafafa;
+    transition: border-color 0.15s, background 0.15s;
+    font-family: inherit;
+    resize: vertical;
+}
+.pf-field input:focus,
+.pf-field select:focus,
+.pf-field textarea:focus {
+    outline: none;
+    border-color: #ff784b;
+    background: #fff;
+}
+
+.pf-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 6px 0 16px;
+}
+.pf-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #444;
+    cursor: pointer;
+}
+.pf-check input[type="checkbox"] {
+    width: 16px; height: 16px;
+    accent-color: #ff784b;
+    cursor: pointer;
+}
+
+.pf-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.pf-btn {
+    padding: 10px 24px;
+    border-radius: 9px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s;
+}
+.pf-btn-primary {
+    background: #ff784b;
+    color: #fff;
+}
+.pf-btn-primary:hover:not(:disabled) { background: #e8673d; }
+.pf-btn-primary:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.pf-btn-secondary {
+    background: #f0f0f0;
+    color: #555;
+}
+.pf-btn-secondary:hover { background: #e4e4e4; }
+
+.pf-loading {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 80px 0; color: #999;
+}
+.pf-spinner {
+    width: 36px; height: 36px;
+    border: 4px solid #eee;
+    border-top-color: #ff784b;
+    border-radius: 50%;
+    animation: pf-spin 0.8s linear infinite;
+    margin-bottom: 14px;
+}
+@keyframes pf-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 600px) {
+    .pet-form-card { border-radius: 0; }
+    .pf-header, .pf-form { padding-left: 20px; padding-right: 20px; }
+    .pf-alert { margin: 16px 20px 0; }
+}

@@ -1,0 +1,89 @@
+.navbar {
+    width: 100%;
+    height: 85px;
+    background: #fff7f4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 70px;
+    box-shadow: 0 4px 20px rgba(244, 138, 170, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #5d4a52;
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.nav-center a {
+    text-decoration: none;
+    color: #7d6571;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-center a:hover {
+    color: #f48aaa;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.icon-link {
+    position: relative;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.icon-link span {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background: #f48aaa;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-btn {
+    background: #f48aaa;
+    color: white;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #eb6f98;
+}
+
+/* Profile image inside the Navbar avatar circle */
+.navbar-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* fill the circle without stretching */
+    border-radius: 50%;   /* ensure it's still circular */
+    display: block;
+}
+ 

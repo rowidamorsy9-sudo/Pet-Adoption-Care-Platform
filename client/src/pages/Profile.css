@@ -1,0 +1,285 @@
+/* ─── client/src/pages/Profile.css ────────────────────────────────────────────
+   CHANGES FROM ORIGINAL:
+     • Added styles for image upload (avatar wrapper, overlay, image-actions).
+     • Added styles for the collapsible password section.
+     • All original rules are PRESERVED exactly.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ── Page layout ── */
+.profile-page {
+    min-height: 100vh;
+    background: #fff7f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+/* ── Card ── */
+.profile-card {
+    background: white;
+    border-radius: 24px;
+    padding: 48px 44px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 8px 25px rgba(255, 182, 193, 0.25);
+    text-align: center;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   NEW: Avatar / image upload section
+   ────────────────────────────────────────────────────────────────────────── */
+.profile-avatar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f48aaa, #ef6f98);
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative; /* needed for overlay */
+    overflow: hidden;
+    border: 3px solid #f3c2d0;
+    transition: border-color 0.2s;
+}
+
+.profile-avatar:hover {
+    border-color: #f48aaa;
+}
+
+/* The actual <img> inside the avatar circle */
+.profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* crop to circle without distortion */
+    border-radius: 50%;
+}
+
+/* Dark overlay with camera icon — appears on hover */
+.profile-avatar-overlay {
+    position: absolute;
+    inset: 0; /* shorthand for top/right/bottom/left: 0 */
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.profile-avatar:hover .profile-avatar-overlay {
+    opacity: 1;
+}
+
+/* Small hint text below avatar */
+.profile-avatar-hint {
+    font-size: 0.78rem;
+    color: #bfa0ae;
+    margin: 0;
+}
+
+/* Upload / Cancel buttons shown after file selection */
+.profile-image-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.profile-upload-btn {
+    padding: 7px 18px;
+    background: #f48aaa;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.profile-upload-btn:hover:not(:disabled) {
+    background: #ef6f98;
+}
+
+.profile-upload-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.profile-cancel-btn {
+    padding: 7px 18px;
+    background: #f5e6ea;
+    color: #9b7f8d;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.profile-cancel-btn:hover {
+    background: #eaccd4;
+}
+
+/* ── Card heading ── */
+.profile-card h1 {
+    font-size: 1.75rem;
+    color: #5d4a52;
+    margin: 0 0 6px;
+}
+
+/* ── Feedback messages ── */
+.profile-message {
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.profile-message.success {
+    background: #b9ead8;
+    color: #234b3a;
+}
+
+.profile-message.error {
+    background: #ffd1dc;
+    color: #9b1c42;
+}
+
+/* ── Form layout ── */
+.profile-form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.profile-field label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #5d4a52;
+}
+
+.profile-field input {
+    padding: 12px 16px;
+    border: 1.8px solid #f3c2d0;
+    border-radius: 12px;
+    font-size: 0.97rem;
+    color: #5d4a52;
+    background: #fffdfc;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.profile-field input:focus {
+    border-color: #f48aaa;
+}
+
+/* Kept for backwards compatibility (email was disabled in original) */
+.disabled-input {
+    background: #f5f5f5 !important;
+    color: #aaa !important;
+    cursor: not-allowed;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   NEW: Change Password section
+   ────────────────────────────────────────────────────────────────────────── */
+.profile-password-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Toggle button that shows/hides the password fields */
+.profile-toggle-password {
+    background: none;
+    border: 1.8px solid #f3c2d0;
+    color: #f48aaa;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s, color 0.2s;
+}
+
+.profile-toggle-password:hover {
+    background: #fff0f4;
+    color: #ef6f98;
+}
+
+/* The three password inputs that appear when section is open */
+.profile-password-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+    background: #fff7f9;
+    border-radius: 12px;
+    border: 1.5px solid #f3c2d0;
+}
+
+/* ── Save button ── */
+.profile-save-btn {
+    width: 100%;
+    padding: 14px;
+    background: #f48aaa;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+.profile-save-btn:hover:not(:disabled) {
+    background: #ef6f98;
+}
+
+.profile-save-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ── Loading state ── */
+.profile-loading {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #9b7f8d;
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+    .profile-card {
+        padding: 32px 20px;
+    }
+}

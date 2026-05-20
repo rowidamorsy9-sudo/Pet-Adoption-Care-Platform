@@ -1,0 +1,193 @@
+.pet-card {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.pet-image-box {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.pet-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heart-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    color: #9b7f8d;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.pet-tags {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+.tag {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pink {
+    background: #f48aaa;
+    color: white;
+}
+
+.purple {
+    background: #c6b1dd;
+    color: #5f4b5b;
+}
+
+.pet-info {
+    padding: 24px;
+}
+
+.pet-info h3 {
+    margin: 0;
+    color: #5d4a52;
+    font-size: 24px;
+}
+
+.breed,
+.details {
+    color: #9b7f8d;
+    font-size: 16px;
+}
+
+.price-box {
+    background: #fff7f4;
+    padding: 12px;
+    border-radius: 16px;
+    margin: 14px 0;
+    color: #5d4a52;
+}
+
+.donation-note {
+    color: #9b7f8d;
+    font-size: 13px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.details-btn,
+.apply-card-btn,
+.adopt-btn {
+    flex: 1;
+    min-width: 95px;
+    height: 48px;
+    border-radius: 22px;
+    border: none;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-btn {
+    background: #f5dce6;
+    color: #5d4a52;
+}
+
+.apply-card-btn {
+    background: #f48aaa;
+    color: white;
+}
+
+.apply-card-btn:hover {
+    background: #ef6f98;
+}
+
+.adopt-btn {
+    background: #b9ead8;
+    color: #5d4a52;
+}
+
+.popup {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    padding: 18px 28px;
+    border-radius: 18px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    z-index: 9999;
+    animation: slideIn 0.4s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.popup.success {
+    background: #9edfc4;
+    color: #234b3a;
+}
+
+.popup.error {
+    background: #f48aaa;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(120px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: #f48aaa;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.logout-btn {
+    border: none;
+    background: #f5dce6;
+    color: #5d4a52;
+    padding: 10px 16px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 700;
+}
